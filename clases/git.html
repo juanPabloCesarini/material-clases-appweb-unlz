@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 1.1: Git & Branching Profesional - UNLZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+    <style>
+        body { font-family: "Montserrat", sans-serif; background-color: #f8f9fa; }
+        .header-git { background-color: #f1502f; color: white; padding: 40px 0; margin-bottom: 30px; }
+        .terminal { background: #212529; color: #00ff00; padding: 1.5rem; border-radius: 8px; font-family: "Courier New", monospace; margin: 20px 0; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); font-size: 0.9rem; }
+        .btn-pdf { background-color: #dc3545; color: white; font-weight: bold; border: none; transition: 0.3s; }
+        .role-card { border-left: 5px solid #f1502f; background: white; height: 100%; }
+        .step-number { background: #f1502f; color: white; border-radius: 50%; width: 25px; height: 25px; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            .terminal { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark no-print">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">← VOLVER AL DASHBOARD</a>
+            <button onclick="window.print()" class="btn btn-pdf btn-sm">📄 EXPORTAR A PDF</button>
+        </div>
+    </nav>
+
+    <header class="header-git no-print text-center">
+        <div class="container">
+            <h1 class="display-5 fw-black text-uppercase">Git: Trabajo en Equipo</h1>
+            <p class="lead">Estandarización de Ramas, Pull Requests y Roles</p>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        
+        <section class="mb-5">
+            <h2 class="fw-bold text-danger">1. Comandos Críticos de Ramas</h2>
+            <p>El flujo de trabajo empieza en la terminal. Estos son los comandos que cada integrante debe dominar para no romper el proyecto:</p>
+            <div class="terminal">
+                <span class="text-info"># Crear una rama para mi tarea y entrar en ella</span><br>
+                $ git checkout -b feature/nombre-de-mi-tarea<br><br>
+                <span class="text-info"># Ver en qué rama estoy parado</span><br>
+                $ git branch<br><br>
+                <span class="text-info"># Subir mi rama al servidor por primera vez</span><br>
+                $ git push origin feature/nombre-de-mi-tarea
+            </div>
+        </section>
+
+        <section class="mb-5 border-top pt-5">
+            <h2 class="fw-bold text-danger">2. Estrategia para el TP Final (GitFlow)</h2>
+            <p>Trabajaremos con un flujo de integración continua. <strong>La rama MAIN es sagrada</strong> (Producción).</p>
+            
+            
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-7">
+                    <div class="p-4 role-card shadow-sm">
+                        <h5 class="fw-bold">🔄 El Ciclo del Desarrollador</h5>
+                        <div class="small">
+                            <p><span class="step-number">1</span> Trabaja en su rama <strong>feature</strong> (Consola).</p>
+                            <p><span class="step-number">2</span> Sube la rama al servidor: <code>git push origin feature/tarea</code>.</p>
+                            <p><span class="step-number">3</span> <strong>En GitHub:</strong> Abre un <strong>Pull Request (PR)</strong> desde su <code>feature</code> hacia la rama <code>developer</code>.</p>
+                            <p><span class="step-number">4</span> El Líder revisa y hace el merge a <code>developer</code>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="p-4 role-card shadow-sm border-primary">
+                        <h5 class="fw-bold text-primary">👑 El Rol del Líder (Release Management)</h5>
+                        <p class="small">El Líder es quien decide cuándo el trabajo está listo para el cliente:</p>
+                        <ul class="small">
+                            <li><strong>Consolidación:</strong> Recibe los PRs de los compañeros en la rama <code>developer</code>.</li>
+                            <li><strong>Control de Calidad:</strong> Testea que el conjunto de tareas en <code>developer</code> funcione sin errores.</li>
+                            <li><strong>Merge a Main:</strong> Una vez que el Sprint está terminado y estable, realiza el merge de <code>developer</code> a <code>main</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 border-top pt-5">
+            <h2 class="fw-bold text-danger">3. Reglas de Oro para la Entrega</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white p-3 h-100">
+                        <h6 class="fw-bold text-warning">La Regla de los "Pequeños Pasos"</h6>
+                        <p class="small mb-0 italic">"Es mejor tener 10 commits breves y claros que uno solo gigante e incomprensible". Cada commit debe resolver una sola tarea a la vez.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-white p-3 h-100 border-start border-5 border-success shadow-sm">
+                        <h6 class="fw-bold">Main = Producción</h6>
+                        <p class="small mb-0 text-muted">Como profesor y cliente, yo solo corregiré lo que esté en <strong>main</strong>. Si el código no llegó a main por falta de merge o errores, se considera tarea no entregada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-5 bg-light border-top">
+        <div class="container">
+            <p class="mb-1 fw-bold">Universidad Nacional de Lomas de Zamora - Sede CABA</p>
+            <p class="mb-1">Tecnicatura en Programación de Computadores</p>
+            <p class="small mt-3">Profesor: <strong>Juan Pablo Cesarini</strong></p>
+            <p class="x-small text-muted mt-4" style="font-size: 0.7rem;">© 2026 - Construido bajo principios DRY & Clean Architecture</p>
+        </div>
+    </footer>
+</body>
+</html>

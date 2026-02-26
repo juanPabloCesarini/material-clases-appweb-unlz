@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 1.2: HTML5 Profesional - UNLZ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+      }
+      .header-html {
+        background: linear-gradient(135deg, #e44d26 0%, #f16529 100%);
+        color: white;
+        padding: 40px 0;
+      }
+      .section-title {
+        border-left: 5px solid #e44d26;
+        padding-left: 15px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .code-block {
+        background: #212529;
+        color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        font-family: "Courier New", monospace;
+        font-size: 0.9rem;
+        margin: 15px 0;
+      }
+      .tag-badge {
+        font-family: monospace;
+        color: #e44d26;
+        background: #fff2ef;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+        border: 1px solid #ffccbc;
+      }
+      .card-custom {
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+        height: 100%;
+      }
+      .card-custom:hover {
+        transform: translateY(-3px);
+      }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background: white !important;
+          font-size: 10pt;
+        }
+        .container {
+          max-width: 100% !important;
+          width: 100% !important;
+        }
+        .code-block {
+          background: #fff !important;
+          color: #000 !important;
+          border: 1px solid #ccc !important;
+        }
+        .tag-badge {
+          background: white !important;
+          border: 1px solid #333 !important;
+          color: black !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark no-print">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html"
+          >← DASHBOARD CÁTEDRA</a
+        >
+        <button onclick="window.print()" class="btn btn-danger btn-sm fw-bold">
+          📄 GENERAR APUNTE PDF
+        </button>
+      </div>
+    </nav>
+
+    <header class="header-html no-print text-center shadow-sm">
+      <div class="container">
+        <h1 class="display-5 fw-black text-uppercase">HTML5 Profesional</h1>
+        <p class="lead">Estructura, Semántica y Formularios Avanzados</p>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <section>
+        <p class="lead">
+          HTML5 proporciona una base sólida para el desarrollo de páginas web
+          modernas, ofreciendo mejor semántica para la accesibilidad y la
+          optimización de motores de búsqueda (SEO).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title text-uppercase">
+          1. Estructura Básica Documental
+        </h2>
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="code-block">
+              &lt;!DOCTYPE html&gt;<br />
+              &lt;html lang="es"&gt;<br />
+              &lt;head&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport"
+              content="width=device-width, initial-scale=1.0"&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Título de la
+              Pestaña&lt;/title&gt;<br />
+              &lt;/head&gt;<br />
+              &lt;body&gt; ... &lt;/body&gt;<br />
+              &lt;/html&gt;
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <ul class="list-group list-group-flush small mt-3">
+              <li class="list-group-item">
+                <strong>!DOCTYPE:</strong> Declara que el documento es HTML5.
+              </li>
+              <li class="list-group-item">
+                <strong>lang="es":</strong> Atributo esencial para lectores de
+                pantalla.
+              </li>
+              <li class="list-group-item">
+                <strong>charset="UTF-8":</strong> Soporte para tildes y eñes.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="section-title text-uppercase">
+          2. Etiquetas Semánticas (Layout)
+        </h2>
+        <p>
+          Definen el significado del contenido, facilitando la lectura a
+          buscadores y tecnologías de asistencia.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card card-custom p-3">
+              <span class="tag-badge mb-2 w-50">&lt;header&gt;</span
+              ><small>Encabezado.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-custom p-3">
+              <span class="tag-badge mb-2 w-50">&lt;nav&gt;</span
+              ><small>Navegación.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-custom p-3">
+              <span class="tag-badge mb-2 w-50">&lt;main&gt;</span
+              ><small>Contenido único.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-custom p-3">
+              <span class="tag-badge mb-2 w-50">&lt;section&gt;</span
+              ><small>Sección temática.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-custom p-3">
+              <span class="tag-badge mb-2 w-50">&lt;article&gt;</span
+              ><small>Post o unidad independiente.</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-custom p-3">
+              <span class="tag-badge mb-2 w-50">&lt;footer&gt;</span
+              ><small>Pie de página.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+            <h2 class="section-title text-uppercase">3. Manejo de Textos y Listas</h2>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <h5 class="fw-bold small text-uppercase text-muted">Jerarquía de Texto</h5>
+                    <div class="bg-white p-3 border rounded h-100">
+                        <p class="mb-2 small"><code>&lt;h1&gt;</code> al <code>&lt;h6&gt;</code>: Títulos.</p>
+                        <p class="mb-2 small"><code>&lt;p&gt;</code>: Párrafos de texto.</p>
+                        <hr>
+                        <p class="mb-1 small"><strong>&lt;strong&gt;</strong>: Importancia negrita.</p>
+                        <p class="mb-0 small"><em>&lt;em&gt;</em>: Énfasis en cursiva.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold small text-uppercase text-muted">Listas de Ítems</h5>
+                    <div class="bg-white p-3 border rounded h-100">
+                        <div class="row">
+                            <div class="col-6">
+                                <small class="fw-bold text-danger">&lt;ul&gt; (Desordenada)</small>
+                                <ul class="small mt-2">
+                                    <li><code>&lt;li&gt;</code> Item</li>
+                                    <li><code>&lt;li&gt;</code> Item</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <small class="fw-bold text-primary">&lt;ol&gt; (Ordenada)</small>
+                                <ol class="small mt-2">
+                                    <li><code>&lt;li&gt;</code> Primero</li>
+                                    <li><code>&lt;li&gt;</code> Segundo</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <p class="x-small text-muted mt-3 border-top pt-2">
+                            <strong>Nota:</strong> Todo ítem de lista debe ir dentro de la etiqueta <code>&lt;li&gt;</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold small text-uppercase text-muted">Listas de Definición</h5>
+                    <div class="bg-light p-3 border-start border-4 border-warning h-100">
+                        <dl class="mb-0 small">
+                            <dt class="fw-bold">&lt;dl&gt;</dt>
+                            <dd class="ms-2">Contenedor de la lista.</dd>
+                            <dt class="fw-bold text-primary">&lt;dt&gt; Término</dt>
+                            <dd class="ms-2 mb-2 italic">Palabra a definir.</dd>
+                            <dt class="fw-bold text-primary">&lt;dd&gt; Definición</dt>
+                            <dd class="ms-2">Explicación del contenido.</dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+      <section class="mt-5">
+        <h2 class="section-title text-uppercase">4. Imágenes y Multimedia</h2>
+        <div class="card card-custom p-4 bg-white">
+          <p class="small">
+            Uso correcto de la etiqueta <code>&lt;img&gt;</code>:
+          </p>
+          <div class="code-block m-0">
+            &lt;img src="img/logo-unlz.png" alt="Logo Universidad de Lomas"
+            title="UNLZ"&gt;
+          </div>
+          <div class="alert alert-info mt-3 mb-0 small">
+            <strong>💡 Regla de Cátedra:</strong> El atributo
+            <code>alt</code> es obligatorio para accesibilidad.
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="section-title text-uppercase">
+          5. Formularios e Interacción
+        </h2>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="p-3 bg-white border rounded">
+              <p class="text-success fw-bold mb-1">Método GET</p>
+              <p class="x-small text-muted">
+                Datos en URL. Máximo 2048 caracteres. No apto para contraseñas.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 bg-white border rounded">
+              <p class="text-danger fw-bold mb-1">Método POST</p>
+              <p class="x-small text-muted">
+                Datos en el cuerpo. Sin límite de tamaño. Seguro para archivos y
+                passwords.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-warning small">
+          <strong>Configuración de Archivos:</strong> Se requiere
+          <code>enctype="multipart/form-data"</code>.
+        </div>
+        <div class="code-block">
+          &lt;form method="POST" enctype="multipart/form-data"&gt;<br />
+          &nbsp;&nbsp;&lt;label&gt;Subir CV:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&lt;input type="file" name="archivo"&gt;<br />
+          &nbsp;&nbsp;&lt;button type="submit"&gt;Enviar&lt;/button&gt;<br />
+          &lt;/form&gt;
+        </div>
+      </section>
+
+      <section class="mt-5 mb-5">
+        <h2 class="section-title text-uppercase">6. Atributos Globales</h2>
+        <table
+          class="table table-hover bg-white rounded shadow-sm overflow-hidden small"
+        >
+          <thead class="table-dark">
+            <tr>
+              <th>Atributo</th>
+              <th>Propósito</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag-badge">id</span></td>
+              <td>Identificador único para JS/CSS.</td>
+            </tr>
+            <tr>
+              <td><span class="tag-badge">class</span></td>
+              <td>Identificador grupal para estilos.</td>
+            </tr>
+            <tr>
+              <td><span class="tag-badge">title</span></td>
+              <td>Tooltip informativo al pasar el cursor.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="text-center py-5 bg-light border-top">
+      <div class="container">
+        <p class="mb-1 fw-bold">
+          Universidad Nacional de Lomas de Zamora - Sede CABA
+        </p>
+        <p class="mb-1 small">
+          Tecnicatura en Programación de Computadores | Materia: Aplicaciones
+          Web
+        </p>
+        <hr class="w-25 mx-auto border-secondary" />
+        <p class="small mt-3">Profesor: <strong>Juan Pablo Cesarini</strong></p>
+      </div>
+    </footer>
+  </body>
+</html>
