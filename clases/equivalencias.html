@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equivalencias de Sintaxis - UNLZ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <style>
+      :root {
+        --unlz-blue: #0d6efd;
+        --dark-syntax: #2c3e50;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      .header-syntax {
+        background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+        color: white;
+        padding: 60px 0;
+      }
+      .table-syntax thead {
+        background-color: var(--dark-syntax);
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+      }
+
+      .code-pill {
+        font-family: "Fira Code", monospace;
+        background: #e9ecef;
+        padding: 4px 8px;
+        border-radius: 6px;
+        color: #d63384;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid #dee2e6;
+      }
+
+      .category-row {
+        background-color: #f1f3f5;
+        font-weight: 900;
+        color: var(--dark-syntax);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+
+      @media print {
+        .no-print {
+          display: none;
+        }
+        .container {
+          width: 100%;
+          max-width: 100%;
+        }
+        body {
+          background: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top no-print"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html"
+          ><span class="text-primary">UNLZ</span> - CABA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html"
+                ><i class="bi bi-house-door"></i> Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="equivalencias.html"
+                ><i class="bi bi-arrow-left-right"></i> Tabla Comparativa</a
+              >
+            </li>
+            <li class="nav-item ms-lg-3">
+              <button
+                class="btn btn-danger btn-sm px-3 shadow-sm"
+                onclick="window.print()"
+              >
+                <i class="bi bi-file-pdf"></i> Imprimir PDF
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="header-syntax text-center">
+      <div class="container">
+        <h1 class="display-4 fw-black mb-2">TABLA DE EQUIVALENCIAS</h1>
+        <p class="lead opacity-75">
+          Guía de sintaxis para el desarrollo Fullstack
+        </p>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0 table-syntax">
+            <thead>
+              <tr>
+                <th class="ps-4" style="width: 20%">Concepto</th>
+                <th style="width: 25%">JavaScript (Frontend)</th>
+                <th style="width: 25%">PHP (Backend)</th>
+                <th style="width: 30%">SQL (Base de Datos)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="category-row">
+                <td colspan="4" class="ps-4">Fundamentos</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Concatenar</td>
+                <td><span class="code-pill">'A' + 'B'</span></td>
+                <td><span class="code-pill">'A' . 'B'</span></td>
+                <td><span class="code-pill">CONCAT('A', 'B')</span></td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Variables</td>
+                <td><span class="code-pill">let x = 10;</span></td>
+                <td><span class="code-pill">$x = 10;</span></td>
+                <td><span class="code-pill">SET @x = 10;</span></td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Salida / Debug</td>
+                <td><span class="code-pill">console.log()</span></td>
+                <td><span class="code-pill">echo / var_dump()</span></td>
+                <td><span class="code-pill">SELECT ...</span></td>
+              </tr>
+
+              <tr class="category-row">
+                <td colspan="4" class="ps-4">Lógica y Comparación</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Igualdad Estricta</td>
+                <td><span class="code-pill">===</span></td>
+                <td><span class="code-pill">===</span></td>
+                <td>
+                  <span class="code-pill">=</span> <small>(No aplica)</small>
+                </td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Distinto que</td>
+                <td><span class="code-pill">!==</span></td>
+                <td><span class="code-pill">!==</span></td>
+                <td>
+                  <span class="code-pill"><></span> o
+                  <span class="code-pill">!=</span>
+                </td>
+              </tr>
+              <tr class="category-row">
+                <td colspan="4" class="ps-4">Documentación y Estructuras</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Comentario 1 línea</td>
+                <td><span class="code-pill">// texto</span></td>
+                <td>
+                  <span class="code-pill">//</span> o
+                  <span class="code-pill"># texto</span>
+                </td>
+                <td><span class="code-pill">-- texto</span></td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Comentario Multilínea</td>
+                <td><span class="code-pill">/* texto */</span></td>
+                <td><span class="code-pill">/* texto */</span></td>
+                <td><span class="code-pill">/* texto */</span></td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Array Llave => Valor</td>
+                <td>
+                  <span class="code-pill">{clave: 'val'}</span>
+                  <small>(Objeto)</small>
+                </td>
+                <td><span class="code-pill">['clave' => 'val']</span></td>
+                <td>
+                  <span class="code-pill">N/A</span>
+                  <small>(Fila/Columna)</small>
+                </td>
+              </tr>
+              <tr class="category-row">
+                <td colspan="4" class="ps-4">Comunicación de Datos</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Gestión de JSON</td>
+                <td>
+                  <span class="code-pill">JSON.stringify()</span><br />
+                  <small class="text-muted">(Empaquetar a texto)</small><br />
+                  <span class="code-pill">JSON.parse()</span><br />
+                  <small class="text-muted">(Abrir el paquete)</small>
+                </td>
+                <td>
+                  <span class="code-pill">json_encode()</span><br />
+                  <small class="text-muted">(Empaquetar a texto)</small><br />
+                  <span class="code-pill">json_decode()</span><br />
+                  <small class="text-muted">(Abrir el paquete)</small>
+                </td>
+                <td>
+                  <span class="code-pill">JSON_OBJECT()</span><br />
+                  <small class="text-muted">(Crear paquete)</small><br />
+                  <span class="code-pill">JSON_EXTRACT()</span><br />
+                  <small class="text-muted">(Leer dentro del paquete)</small>
+                </td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-bold">Longitud / Conteo</td>
+                <td><span class="code-pill">array.length</span></td>
+                <td><span class="code-pill">count($array)</span></td>
+                <td><span class="code-pill">COUNT(*)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="alert alert-info mt-4 border-0 shadow-sm" role="alert">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        <strong>Nota del Profesor:</strong> Esta tabla es una referencia rápida.
+        Recordá que aunque la lógica es la misma, cada entorno tiene sus propias
+        reglas de ejecución (Navegador vs Servidor vs Motor de BD).
+      </div>
+    </main>
+
+    <footer class="text-center py-5 border-top bg-white">
+      <div class="container">
+        <p class="mb-1 fw-bold">
+          Universidad Nacional de Lomas de Zamora - Sede CABA
+        </p>
+        <p class="mb-1">Tecnicatura en Programación de Computadores</p>
+        <p class="mb-3 text-muted">
+          Materia: <strong>Aplicaciones Web</strong>
+        </p>
+        <hr class="w-25 mx-auto border-secondary" />
+        <p class="small mt-3">Profesor: <strong>Juan Pablo Cesarini</strong></p>
+        <p class="small">
+          2026 - Hecho con <span style="color: #e74c3c">&hearts;</span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -21,19 +21,37 @@
     .card-body { padding: 1.25rem; }
 </style>
 
-<header class="hero text-center text-md-start">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top no-print">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-9">
-                <h1 class="fw-black">MATERIAL DE CLASES</h1>
-                <p class="fw-bold text-uppercase">Programación Web & Arquitectura de Software - UNLZ 2026</p>
-            </div>
-            <div class="col-md-3 text-end d-none d-md-block">
-                <span style="font-size: 60px;">🏊‍♂️</span>
-            </div>
+        <a class="navbar-brand fw-bold" href="../index.html">
+            <span style="color: #0d6efd;">UNLZ</span> - CABA
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                         Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="clases/equivalencias.html">
+                         Tabla Comparativa
+                    </a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <button class="btn btn-danger btn-sm px-3 shadow-sm" onclick="window.print()">
+                        Imprimir PDF
+                    </button>
+                </li>
+            </ul>
         </div>
     </div>
-</header>
+</nav>
 
 <main class="container my-5">
     
@@ -132,8 +150,8 @@
             <p class="mb-3 text-muted">Materia: <strong>Aplicaciones Web</strong></p>
             <hr class="w-25 mx-auto border-secondary">
             <p class="small mt-3">Profesor: <strong>Juan Pablo Cesarini</strong></p>
-            <p class="x-small text-muted mt-4">2026 - Hecho con <i class="bi bi-heart-fill text-danger"></i></p>
-        </div>
+          <p class="small">2026 - Hecho con <span style="color: #e74c3c;">&hearts;</span></p>
+         </div>
     </footer>
 
 </body>

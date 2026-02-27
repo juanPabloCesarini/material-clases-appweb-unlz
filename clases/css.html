@@ -41,12 +41,37 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark no-print">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">← DASHBOARD</a>
-            <button onclick="window.print()" class="btn btn-info btn-sm fw-bold text-white">📄 DESCARGAR APUNTE</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top no-print">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">
+            <span style="color: #0d6efd;">UNLZ</span> - CABA
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">
+                         Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="equivalencias.html">
+                        Tabla Comparativa
+                    </a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <button class="btn btn-danger btn-sm px-3 shadow-sm" onclick="window.print()">
+                         Imprimir PDF
+                    </button>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <header class="header-css text-center shadow-sm">
         <div class="container">

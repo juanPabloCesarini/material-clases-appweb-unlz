@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 4: Backend & Arquitectura - UNLZ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <style>
+      :root {
+        --php-color: #8e44ad;
+        --lomas-blue: #003870;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      .header-unit {
+        background: linear-gradient(135deg, #8e44ad 0%, #2c3e50 100%);
+        color: white;
+        padding: 40px 0;
+      }
+      .section-title {
+        border-left: 6px solid var(--php-color);
+        padding-left: 15px;
+        margin: 40px 0 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .code-block {
+        background: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: "Fira Code", monospace;
+        font-size: 0.9rem;
+        border-left: 4px solid #61afef;
+      }
+      .table-operators {
+        font-size: 0.85rem;
+        background: white;
+      }
+      .table-operators thead {
+        background-color: #2c3e50;
+        color: white;
+      }
+      .theory-box {
+        background: #e9ecef;
+        border-radius: 10px;
+        padding: 20px;
+        border-left: 5px solid #2980b9;
+        margin-bottom: 20px;
+      }
+      .diccionario-item {
+        transition: transform 0.2s;
+      }
+      @media print {
+        .no-print {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top no-print">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">
+            <span style="color: #0d6efd;">UNLZ</span> - CABA
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">
+                         Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="equivalencias.html">
+                         Tabla Comparativa
+                    </a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <button class="btn btn-danger btn-sm px-3 shadow-sm" onclick="window.print()">
+                        Imprimir PDF
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <header class="header-unit text-center">
+      <div class="container">
+        <h1 class="display-5 fw-black text-uppercase">
+          Unidad 4: Backend & Arquitectura
+        </h1>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <section id="php">
+        <h2 class="section-title">1. Sintaxis y Operadores PHP</h2>
+
+        <div class="code-block mb-4">
+          <span style="color: #c678dd">&lt;?php</span><br />
+          <span style="color: #5c6370"
+            >// Operadores de comparación e identidad</span
+          ><br />
+          <span style="color: #e06c75">$valor</span> =
+          <span style="color: #d19a66">10</span>;<br />
+          <span style="color: #c678dd">if</span> (<span style="color: #e06c75"
+            >$valor</span
+          >
+          === <span style="color: #98c379">"10"</span>) {
+          <span style="color: #5c6370">// False por tipo</span> }<br />
+          <span style="color: #c678dd">?&gt;</span>
+        </div>
+
+        <h5 class="fw-bold mt-4">1.1 Operadores Aritméticos</h5>
+        <div class="table-responsive mb-4">
+          <table class="table table-bordered table-operators shadow-sm">
+            <thead class="table-dark text-center">
+              <tr>
+                <th>Signo</th>
+                <th>Operación</th>
+                <th>Ejemplo</th>
+                <th>Resultado</th>
+                <th>Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold text-center">+</td>
+                <td>Suma</td>
+                <td><code>5 + 5</code></td>
+                <td>10</td>
+                <td>No concatena.</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">-</td>
+                <td>Resta</td>
+                <td><code>10 - 4</code></td>
+                <td>6</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">*</td>
+                <td>Multiplicación</td>
+                <td><code>2 * 3</code></td>
+                <td>6</td>
+                <td>Uso de asterisco.</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">/</td>
+                <td>División</td>
+                <td><code>10 / 2</code></td>
+                <td>5</td>
+                <td>Ojo con <code>/ 0</code> (Error).</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">%</td>
+                <td>Módulo</td>
+                <td><code>10 % 3</code></td>
+                <td>1</td>
+                <td>Resto de la división.</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">**</td>
+                <td>Exponenciación</td>
+                <td><code>2 ** 3</code></td>
+                <td>8</td>
+                <td>2 elevado a la 3.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h5 class="fw-bold mt-4">1.3 Tabla de Verdad (Operadores Lógicos)</h5>
+        <div class="table-responsive">
+          <table class="table table-bordered table-operators shadow-sm">
+            <thead class="table-dark text-center">
+              <tr>
+                <th>Operador</th>
+                <th>Valor A</th>
+                <th>Valor B</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold text-center">AND (&&)</td>
+                <td class="text-success">True</td>
+                <td class="text-success">True</td>
+                <td class="text-success fw-bold">True</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">AND (&&)</td>
+                <td class="text-success">True</td>
+                <td class="text-danger">False</td>
+                <td class="text-danger fw-bold">False</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">AND (&&)</td>
+                <td class="text-danger">False</td>
+                <td class="text-danger">False</td>
+                <td class="text-danger fw-bold">False</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">OR (||)</td>
+                <td class="text-success">True</td>
+                <td class="text-danger">False</td>
+                <td class="text-success fw-bold">True</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">OR (||)</td>
+                <td class="text-danger">False</td>
+                <td class="text-danger">False</td>
+                <td class="text-danger fw-bold">False</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">NOT (!)</td>
+                <td class="text-success">True</td>
+                <td class="text-muted">N/A</td>
+                <td class="text-danger fw-bold">False</td>
+              </tr>
+              <tr>
+                <td class="fw-bold text-center">NOT (!)</td>
+                <td class="text-danger">False</td>
+                <td class="text-muted">N/A</td>
+                <td class="text-success fw-bold">True</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="mvc" class="mt-5 pt-4 border-top text-center">
+        <h2 class="section-title text-start">
+          2. Patrón Modelo-Vista-Controlador
+        </h2>
+
+        <img
+          src="../img/mvc.png"
+          alt="Diagrama MVC"
+          class="img-fluid rounded shadow-sm border mb-4"
+          style="max-height: 350px"
+        />
+
+        <div class="row g-4 text-start mt-2">
+          <div class="col-md-4">
+            <div
+              class="p-3 bg-white border-top border-danger border-4 rounded shadow-sm h-100"
+            >
+              <strong>MODELO:</strong> Datos y reglas.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="p-3 bg-white border-top border-primary border-4 rounded shadow-sm h-100"
+            >
+              <strong>CONTROLADOR:</strong> El cerebro/puente.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="p-3 bg-white border-top border-success border-4 rounded shadow-sm h-100"
+            >
+              <strong>VISTA:</strong> Lo que ve el usuario.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="glosario" class="mt-5 pt-4 border-top">
+        <h2 class="section-title">3. Glosario de Ingeniería Web</h2>
+        <p class="text-muted mb-4">
+          Conceptos clave acumulados para el desarrollo de aplicaciones
+          profesionales.
+        </p>
+
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-primary rounded-end"
+            >
+              <h6 class="fw-bold mb-1">
+                AJAX (Asynchronous JavaScript and XML)
+              </h6>
+              <p class="small mb-0 text-muted">
+                Técnica que permite actualizar partes de una página web sin
+                recargarla por completo, mejorando la experiencia del usuario y
+                la eficiencia del servidor.
+              </p>
+            </div>
+
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-success rounded-end"
+            >
+              <h6 class="fw-bold mb-1">API & JSON</h6>
+              <p class="small mb-0 text-muted">
+                La API es el contrato de comunicación entre sistemas. JSON es el
+                formato de texto ligero y universal que transporta los datos en
+                esas comunicaciones.
+              </p>
+            </div>
+
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-info rounded-end"
+            >
+              <h6 class="fw-bold mb-1">DRY (Don't Repeat Yourself)</h6>
+              <p class="small mb-0 text-muted">
+                Principio fundamental de programación que busca reducir la
+                duplicación. Cada pieza de lógica debe tener una representación
+                única en el sistema.
+              </p>
+            </div>
+
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-secondary rounded-end"
+            >
+              <h6 class="fw-bold mb-1">CLEAN CODE</h6>
+              <p class="small mb-0 text-muted">
+                Escribir código legible y fácil de mantener. Prioriza nombres
+                descriptivos para variables y funciones (ej:
+                <code>$usuarioActivo</code> en lugar de <code>$u</code>).
+              </p>
+            </div>
+
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-warning rounded-end"
+            >
+              <h6 class="fw-bold mb-2">CRUD (Persistencia de Datos)</h6>
+              <p class="small text-muted mb-2">
+                Acrónimo que define las operaciones fundamentales en cualquier
+                sistema que gestione datos persistentes:
+              </p>
+              <div class="table-responsive">
+                <table
+                  class="table table-sm table-hover border mb-0"
+                  style="font-size: 0.8rem"
+                >
+                  <thead class="table-light">
+                    <tr>
+                      <th>Letra</th>
+                      <th>Acción</th>
+                      <th>Sentencia SQL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold text-primary">C</td>
+                      <td>Create (Crear)</td>
+                      <td><code>INSERT INTO...</code></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold text-success">R</td>
+                      <td>Read (Leer)</td>
+                      <td><code>SELECT * FROM...</code></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold text-warning">U</td>
+                      <td>Update (Actualizar)</td>
+                      <td><code>UPDATE... SET...</code></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold text-danger">D</td>
+                      <td>Delete (Borrar)</td>
+                      <td><code>DELETE FROM...</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-dark rounded-end"
+            >
+              <h6 class="fw-bold mb-1">STATELESS & MIDDLEWARE</h6>
+              <p class="small mb-0 text-muted">
+                Stateless significa que el servidor no guarda estado entre
+                peticiones. El Middleware es una capa lógica que filtra o
+                procesa peticiones antes de llegar al controlador.
+              </p>
+            </div>
+
+            <div
+              class="diccionario-item shadow-sm p-3 mb-3 bg-white border-start border-5 border-danger rounded-end"
+            >
+              <h6 class="fw-bold mb-1">BUENAS PRÁCTICAS</h6>
+              <p class="small mb-2 text-muted">
+                Estándares de calidad indispensables para un entorno
+                profesional:
+              </p>
+              <ul class="small text-muted mb-0">
+                <li>
+                  <strong>Indentación Coherente:</strong> Facilita la lectura
+                  visual de la estructura del código.
+                </li>
+                <li>
+                  <strong>Comentarios de Propósito:</strong> Explicar el "por
+                  qué" de una lógica compleja, no el "qué" (que debería ser
+                  obvio por el código).
+                </li>
+                <li>
+                  <strong>Validación de Inputs:</strong> Filtrar siempre los
+                  datos del usuario para prevenir inyecciones de código y
+                  asegurar la integridad.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center py-5 border-top bg-white">
+      <div class="container">
+        <p class="mb-1 fw-bold">
+          Universidad Nacional de Lomas de Zamora - Sede CABA
+        </p>
+        <p class="mb-1">Tecnicatura en Programación de Computadores</p>
+        <p class="mb-3 text-muted">
+          Materia: <strong>Aplicaciones Web</strong>
+        </p>
+        <hr class="w-25 mx-auto border-secondary" />
+        <p class="small mt-3">Profesor: <strong>Juan Pablo Cesarini</strong></p>
+        <p class="small">
+          2026 - Hecho con <span style="color: #e74c3c">&hearts;</span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
