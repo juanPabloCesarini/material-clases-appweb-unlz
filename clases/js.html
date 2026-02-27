@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 3: JavaScript Moderno - UNLZ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <style>
+      :root {
+        --lomas-azul: #003870;
+        --js-yellow: #f7df1e;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f4f7f6;
+        color: #2d3436;
+      }
+      .header-js {
+        background: linear-gradient(135deg, #2d3436 0%, #000 100%);
+        color: var(--js-yellow);
+        padding: 50px 0;
+        border-bottom: 5px solid var(--js-yellow);
+      }
+      .section-title {
+        border-left: 5px solid var(--js-yellow);
+        padding-left: 15px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #2d3436;
+      }
+      .code-block {
+        background: #1e1e1e;
+        color: #9cdcfe;
+        padding: 1.5rem;
+        border-radius: 8px;
+        font-family: "Fira Code", monospace;
+        font-size: 0.85rem;
+        border: 1px solid #333;
+      }
+      .token-keyword {
+        color: #569cd6;
+      }
+      .token-string {
+        color: #ce9178;
+      }
+      .card-js {
+        border: none;
+        border-radius: 12px;
+        transition: 0.3s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .card-js:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+      .badge-js {
+        background-color: var(--js-yellow);
+        color: #000;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark no-print">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">← DASHBOARD</a>
+        <button onclick="window.print()" class="btn btn-warning btn-sm fw-bold">
+          📄 DESCARGAR PDF CLASE
+        </button>
+      </div>
+    </nav>
+
+    <header class="header-js text-center">
+      <div class="container">
+        <i class="bi bi-filetype-js display-1"></i>
+        <h1 class="display-5 fw-black text-uppercase">JavaScript ES6+</h1>
+        <p class="lead">
+          Lógica Asíncrona, Programación Funcional y Modularización
+        </p>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <section>
+        <h2 class="section-title">1. Variables y Ámbito (Scope)</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <p>
+              Abandonamos <code>var</code> para evitar el
+              <em>hoisting</em> accidental. Usamos <strong>let</strong> para
+              valores mutables y <strong>const</strong> para referencias
+              inmutables.
+            </p>
+            <div class="code-block">
+              <span class="token-keyword">const</span> PI =
+              <span style="color: #b5cea8">3.1416</span>;<br />
+              <span class="token-keyword">let</span> ciudad =
+              <span class="token-string">"Lomas de Zamora"</span>;<br />
+              <span style="color: #6a9955"
+                >// ciudad = "CABA"; <- Permitido</span
+              >
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-js p-4 bg-white">
+              <h6 class="fw-bold">
+                <i class="bi bi-lightning-charge-fill text-warning"></i> Tipos
+                de Datos ES6
+              </h6>
+              <ul class="small mb-0 mt-2">
+                <li>
+                  <strong>Primitivos:</strong> String, Number, Boolean, Null,
+                  Undefined.
+                </li>
+                <li>
+                  <strong>Complejos:</strong> Arrays <code>[]</code> y Objetos
+                  <code>{}</code>.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="section-title">2. Funciones Modernas y Promesas</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="p-3 bg-white rounded shadow-sm border">
+              <h6 class="fw-bold small text-uppercase">Arrow Functions</h6>
+              <p class="x-small">
+                Sintaxis reducida y sin <code>this</code> propio.
+              </p>
+              <div class="code-block" style="font-size: 0.75rem">
+                <span class="token-keyword">const</span> saludar = (nombre) =>
+                <span class="token-string">`Hola ${nombre}`</span>;
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 bg-white rounded shadow-sm border">
+              <h6 class="fw-bold small text-uppercase">
+                Estados de una Promesa
+              </h6>
+              <div class="d-flex gap-2 mt-2">
+                <span class="badge bg-secondary">Pending</span>
+                <span class="badge bg-success">Fulfilled</span>
+                <span class="badge bg-danger">Rejected</span>
+              </div>
+              <p class="x-small mt-2 mb-0">
+                Usamos <code>.then()</code> y <code>.catch()</code> para manejar
+                el resultado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="section-title">3. Async / Await & Fetch</h2>
+        <p>
+          Es la forma moderna de consumir APIs sin caer en el
+          <em>"Callback Hell"</em>. Pausamos la ejecución hasta que la promesa
+          se resuelva.
+        </p>
+        <div class="code-block shadow-lg">
+          <span class="token-keyword">async function</span> obtenerData() {<br />
+          &nbsp;&nbsp;<span class="token-keyword">try</span> {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="token-keyword">const</span> res =
+          <span class="token-keyword">await</span> fetch(<span
+            class="token-string"
+            >'https://api.unlz.edu.ar'</span
+          >);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="token-keyword">const</span> data
+          = <span class="token-keyword">await</span> res.json();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.log(data);<br />
+          &nbsp;&nbsp;} <span class="token-keyword">catch</span> (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.error(<span class="token-string"
+            >"Error en la conexión"</span
+          >);<br />
+          &nbsp;&nbsp;}<br />
+          }
+        </div>
+      </section>
+
+      <section class="mt-5 mb-5">
+        <h2 class="section-title">4. Módulos: Clean Architecture</h2>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div class="card card-js p-3 h-100">
+              <i class="bi bi-box-arrow-right fs-1 text-primary"></i>
+              <h6 class="fw-bold mt-2">export</h6>
+              <p class="x-small">
+                Sacamos funciones del archivo para que otros las usen.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-js p-3 h-100 border-warning">
+              <i class="bi bi-box-arrow-in-left fs-1 text-warning"></i>
+              <h6 class="fw-bold mt-2">import</h6>
+              <p class="x-small">
+                Traemos lógica de otros módulos. <code>type="module"</code> en
+                HTML.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-js p-3 h-100">
+              <i class="bi bi-diagram-3 fs-1 text-success"></i>
+              <h6 class="fw-bold mt-2">Mantenibilidad</h6>
+              <p class="x-small">
+                Separamos lógica de UI (DOM) de la lógica de Datos (API).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="mt-5 pt-4 border-top">
+        <h2 class="section-title">Laboratorio: Pokédex Modular</h2>
+        <p class="small text-muted mb-4">
+          Implementación de <strong>Clean Architecture</strong>: Separamos la
+          API de la Visualización.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-lg-4">
+            <div class="card h-100 card-js border-0 bg-dark text-white p-3">
+              <h6 class="text-warning border-bottom pb-2 small fw-bold">
+                1. api.js (Módulo Fetch)
+              </h6>
+              <div
+                class="code-block border-0 bg-transparent p-0"
+                style="font-size: 0.75rem"
+              >
+                <span class="token-keyword">export const</span> getPokemon =
+                <span class="token-keyword">async</span> (id) => {<br />
+                &nbsp;&nbsp;<span class="token-keyword">const</span> res =
+                <span class="token-keyword">await</span>
+                fetch(`.../pokemon/${id}`);<br />
+                &nbsp;&nbsp;<span class="token-keyword">if</span> (!res.ok)
+                <span class="token-keyword">throw</span>
+                <span class="token-keyword">new</span> Error();<br />
+                &nbsp;&nbsp;<span class="token-keyword">return await</span>
+                res.json();<br />
+                };
+              </div>
+              <p class="x-small text-muted mt-3 italic text-warning">
+                Solo se encarga de la red.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div
+              class="card h-100 card-js border-0 p-3"
+              style="background-color: #34495e; color: #ecf0f1"
+            >
+              <h6 class="text-info border-bottom pb-2 small fw-bold">
+                2. ui.js (Módulo Render)
+              </h6>
+              <div
+                class="code-block border-0 bg-transparent p-0"
+                style="font-size: 0.75rem; color: #9cdcfe"
+              >
+                <span class="token-keyword">export const</span> drawCard =
+                (data) => {<br />
+                &nbsp;&nbsp;<span class="token-keyword">return</span> `<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="pkm-card"&gt;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img
+                src="${data.sprites.front_default}"&gt;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;${data.name}&lt;/h4&gt;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;`;<br />
+                };
+              </div>
+              <p class="x-small text-muted mt-3 italic text-info">
+                Solo se encarga del HTML.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div
+              class="card h-100 card-js border-0 p-3"
+              style="background-color: #f7df1e; color: #000"
+            >
+              <h6
+                class="text-dark border-bottom border-dark pb-2 small fw-bold"
+              >
+                3. main.js (Orquestador)
+              </h6>
+              <div
+                class="code-block border-0 bg-dark p-2"
+                style="font-size: 0.7rem"
+              >
+                <span class="token-keyword">import</span> { getPokemon }
+                <span class="token-keyword">from</span> './api.js';<br />
+                <span class="token-keyword">import</span> { drawCard }
+                <span class="token-keyword">from</span> './ui.js';<br /><br />
+                <span class="token-keyword">const</span> app =
+                <span class="token-keyword">async</span> () => {<br />
+                &nbsp;&nbsp;<span class="token-keyword">const</span> pkm =
+                <span class="token-keyword">await</span> getPokemon(<span
+                  class="token-string"
+                  >'pikachu'</span
+                >);<br />
+                &nbsp;&nbsp;document.body.innerHTML = drawCard(pkm);<br />
+                };<br />
+                app();
+              </div>
+              <p class="x-small text-dark mt-3 fw-bold italic text-uppercase">
+                Punto de entrada de la App.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 p-4 bg-white rounded border text-center shadow-inner">
+          <h6 class="small text-muted text-uppercase mb-3">
+            Vista previa del componente
+          </h6>
+          <div
+            class="d-inline-block p-3 rounded"
+            style="background: #f8f9fa; border: 2px solid #003870"
+          >
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+              alt="Pikachu"
+            />
+            <h5 class="fw-bold text-uppercase mb-0" style="color: #003870">
+              Pikachu
+            </h5>
+            <span class="badge bg-warning text-dark">Electric</span>
+          </div>
+        </div>
+      </section> -->
+    <section class="mt-5 pt-4 border-top">
+    <h2 class="section-title">Laboratorio: Pokédex Modular</h2>
+    <p class="small text-muted mb-4">Implementación de <strong>Clean Architecture</strong>: Separamos la API de la Visualización.</p>
+
+    <div class="row g-3">
+        <div class="col-lg-4">
+            <div class="card h-100 card-js border-0 bg-dark text-white p-3 shadow">
+                <h6 class="text-warning border-bottom border-secondary pb-2 small fw-bold text-uppercase">1. api.js (Módulo Fetch)</h6>
+                <div class="code-block border-0 bg-transparent p-0" style="font-size: 0.75rem;">
+<span class="token-keyword">export const</span> getPokemon = <span class="token-keyword">async</span> (id) => {<br>
+&nbsp;&nbsp;<span class="token-keyword">const</span> res = <span class="token-keyword">await</span> fetch(`.../pokemon/${id}`);<br>
+&nbsp;&nbsp;<span class="token-keyword">if</span> (!res.ok) <span class="token-keyword">throw</span> <span class="token-keyword">new</span> Error();<br>
+&nbsp;&nbsp;<span class="token-keyword">return await</span> res.json();<br>
+};
+                </div>
+                <p class="x-small mt-3 mb-0 fw-bold" style="color: #f1c40f;">
+                   <i class="bi bi-info-circle"></i> Solo se encarga de la comunicación de red.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card h-100 card-js border-0 p-3 shadow" style="background-color: #2c3e50; color: #ecf0f1;">
+                <h6 class="text-info border-bottom border-secondary pb-2 small fw-bold text-uppercase">2. ui.js (Módulo Render)</h6>
+                <div class="code-block border-0 bg-transparent p-0" style="font-size: 0.75rem; color: #9cdcfe;">
+<span class="token-keyword">export const</span> drawCard = (data) => {<br>
+&nbsp;&nbsp;<span class="token-keyword">return</span> `<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="pkm-card"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="${data.sprites.front_default}"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;${data.name}&lt;/h4&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;`;<br>
+};
+                </div>
+                <p class="x-small mt-3 mb-0 fw-bold" style="color: #00d2ff;">
+                   <i class="bi bi-eye"></i> Solo se encarga de la manipulación del DOM.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card h-100 card-js border-0 p-3 shadow" style="background-color: #f1c40f; color: #000;">
+                <h6 class="text-dark border-bottom border-dark pb-2 small fw-bold text-uppercase">3. main.js (Orquestador)</h6>
+                <div class="code-block border-0 bg-dark p-2" style="font-size: 0.7rem;">
+<span class="token-keyword">import</span> { getPokemon } <span class="token-keyword">from</span> './api.js';<br>
+<span class="token-keyword">import</span> { drawCard } <span class="token-keyword">from</span> './ui.js';<br><br>
+<span class="token-keyword">const</span> app = <span class="token-keyword">async</span> () => {<br>
+&nbsp;&nbsp;<span class="token-keyword">const</span> pkm = <span class="token-keyword">await</span> getPokemon(<span class="token-string">'pikachu'</span>);<br>
+&nbsp;&nbsp;document.body.innerHTML = drawCard(pkm);<br>
+};<br>
+app();
+                </div>
+                <p class="x-small text-dark mt-3 mb-0 fw-bold italic text-uppercase">
+                   <i class="bi bi-cpu"></i> Punto de entrada y coordinación de módulos.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <footer class="text-center py-5 border-top bg-white">
+      <div class="container">
+        <p class="mb-1 fw-bold">
+          Universidad Nacional de Lomas de Zamora - Sede CABA
+        </p>
+        <p class="mb-1">Tecnicatura en Programación de Computadores</p>
+        <p class="mb-3 text-muted">
+          Materia: <strong>Aplicaciones Web</strong>
+        </p>
+        <hr class="w-25 mx-auto border-secondary" />
+        <p class="small mt-3">Profesor: <strong>Juan Pablo Cesarini</strong></p>
+        <p class="x-small text-muted mt-4">
+          2026 - Hecho con <i class="bi bi-heart-fill text-danger"></i>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
